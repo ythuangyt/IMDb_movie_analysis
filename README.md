@@ -1,7 +1,7 @@
 # How to Invest in Movies
 **Authors:** [Sheng ZhaoXia](https://github.com/SXiaZr), [Yinan Zhang](https://github.com/yinanzhangepfl), [Yu-Ting Huang](https://github.com/yuyuvalerie), [Zhantao Deng](https://github.com/GentleDell) 
 
-**Report**: [How to Invest in Movies]()
+**Report**: [How to Invest in Movies](https://github.com/GentleDell/IMDb_movie_analysis/blob/master/IMDB_Project.pdf)
 
 ## Abstract
 
