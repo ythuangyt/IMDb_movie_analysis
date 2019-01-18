@@ -1,5 +1,5 @@
 # How to Invest in Movies
-**Authors:** [ShengZhao Xia](https://github.com/SXiaZr), [Yinan Zhang](https://github.com/yinanzhangepfl), [Yu-Ting Huang](https://github.com/yuyuvalerie), [Zhantao Deng](https://github.com/GentleDell) 
+**Authors:** [Shengzhao Xia](https://github.com/SXiaZr), [Yinan Zhang](https://github.com/yinanzhangepfl), [Yu-Ting Huang](https://github.com/yuyuvalerie), [Zhantao Deng](https://github.com/GentleDell) 
 
 **Report**: [How to Invest in Movies]()
 
@@ -61,7 +61,7 @@ The dataset contains 4803 movies data with 20 distinct features. The important f
 
 
 ## 5. Contributions of group members
-**ShengZhao Xia:**
+**Shengzhao Xia:**
 - Actor/ress social network analysis
 - Genre and keyword subgraphs
 - Reports
