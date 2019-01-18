@@ -141,5 +141,5 @@ def visual_signalongraph(weight, signal, labels, mode = None, save = False):
         if save:
             plt.savefig('signal_on_graph.png', dpi = 300)    
             
-    print("The smoothness of the given graph is {:.2f}".format(calculate_smoothness(signal, laplacian_combinatorial)))
+#    print("The smoothness of the given graph is {:.2f}".format(calculate_smoothness(signal, laplacian_combinatorial)))
     return 0

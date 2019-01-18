@@ -8,6 +8,7 @@ Created on Tue Jan 15 21:59:53 2019
 import numpy as np
 
 from Lib_graph import construct_graphs
+from Lib_prediction import ROI_prediction
 from Lib_gradientdecent import Optimize_GraphWeight
 from Lib_vis import visual_list, visual_signalongraph
 
@@ -25,13 +26,13 @@ features  = ['budget',
              'vote_average']
 
 # 2.constructing subgraphs
-signal, W_3d = construct_graphs( File_path, features, genre = 'Science Fiction')
+signal, W_3d = construct_graphs( File_path, features, genre = 'Romance')
 
 
 # In[ PART 2. Optimize weight vector V ] 
 
 # 1.initialize GD parameters
-maxiters        = 1000
+maxiters        = 1
 step_Vk         = 0.2
 step_t          = 0.00000005
 Lambda          = 0.01     # L1 regularization lambda = 0.01
@@ -72,17 +73,20 @@ visual_signalongraph(Weight, signal, labels = np.ones(Weight.shape[0]), save = T
 # In[ PART 4. Predict the ROI of a given new node ]
 
 # 1. define a new node with its 
-# La La Land
-new_movie = {'budget':      30000000, 
+# Please fill None when there is no data in a feature
+new_movie = { # La La Land, revenue: 446092357
+             'budget':      30000000, 
              'cast':        ['Ryan Gosling', 'Emma Stone', 'Amiée Conn', 'Terry Walters', 'Thom Shelton'], 
              'crew':        'Damien Chazelle', 
-             'genres':      446092357, 
+             'genres':      None, 
              'keywords':    ['los angeles california', 'pianist', 'aspiring actress', 'musician', 'jazz club'], 
              'popularity':  284, 
              'production_companies':['Summit Entertainment', 'Black Label Media', 'TIK Films', 'Impostor Pictures', 'Gilbert Films', 'Marc Platt Productions'], 
              'vote_average':8.0}
 
-
+# 2. predict ROI of the movie
+k_nn = 3
+Predict_ROI = ROI_prediction(new_movie, Vk, signal, features, k_nn, File_path)
 
 
 
