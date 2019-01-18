@@ -7,7 +7,7 @@
 
 
 ## 1. Prerequisites
-This project is based on [Python](https://www.python.org/) and we use [Spyder](https://www.spyder-ide.org/) as our python programming environment. We also provide .ipynb files for [Jupyter notebook](https://jupyter.org/). These softwares can be installed together with [Anaconda](https://www.anaconda.com/). In addition, We install all packages through the Anaconda Prompt. These packages have been tested in **Window 10 Home** and **macOS Mojave**, but it should be easy to implement in other platforms. 
+This project is based on [Python](https://www.python.org/) and we use [Spyder](https://www.spyder-ide.org/) as our python programming environment. We also provide `.ipynb` files for [Jupyter notebook](https://jupyter.org/). These softwares can be installed together with [Anaconda](https://www.anaconda.com/). In addition, We install all packages through the Anaconda Prompt. These packages have been tested in **Window 10 Home** and **macOS Mojave**, but it should be easy to implement in other platforms. 
 
 ### Anaconda
 This project is based on anaconda and jupiter notebook. Download and install instructions can be found at: https://www.anaconda.com/download/. After installing Anaconda, `pip` and `conda` can be used to install Python packages. Spyder will also be installed together with 
@@ -19,7 +19,7 @@ python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy
 ```
 
 ### Networkx
-We use networkx to visualize signals and graph structure. The package can be installed by typing the following command in your Anaconda Prompt.
+We use [networkx](http://networkx.github.io) to visualize signals and graph structure. The package can be installed by typing the following command in your Anaconda Prompt.
 ```
 pip install networkx
 ```
@@ -32,8 +32,8 @@ pip install -U nltk
 
 ## 2. Research questions
 In this project we have figured out:
-- What factors are important for the ROI (Return on Investment) of a genre?
-- How to predict the ROI of a movie with some prior features, e.g. budget and production companies ?
+- What factors are important for the ROI (Return on Investment) of a specific genre?
+- How to predict the ROI of a new movie with some prior features, e.g. budget and production companies ?
 
 ## 3. Dataset
 ### Original Dataset:
