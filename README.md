@@ -39,8 +39,10 @@ In this project we have figured out:
 ### Original Dataset:
 We use the dataset on [Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata). It contains two csv files: 
 - `tmdb_5000_credits.csv` (~ 38.1MB): 
+
 The dataset contains the cast and crew data of 4803 movies. The cast feature mainly depicts what actors appear in the movie and what characters they star. So as the crew data, which descibles the names and jobs of specific crews. 
 - `tmdb_5000_movies.csv` (~ 5.43MB): 
+
 The dataset contains 4803 movies data with 20 distinct features. The important features that we are interested: budget, genres ,keywords, title, popularity, production_companies, revenue, vote_average.
 
 
