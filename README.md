@@ -1,5 +1,5 @@
 # How to Invest in Movies
-**Authors:** [Shengzhao Xia](https://github.com/SXiaZr), [Yinan Zhang](https://github.com/yinanzhangepfl), [Yu-Ting Huang](https://github.com/yuyuvalerie), [Zhantao Deng](https://github.com/GentleDell) 
+**Authors:** [Sheng ZhaoXia](https://github.com/SXiaZr), [Yinan Zhang](https://github.com/yinanzhangepfl), [Yu-Ting Huang](https://github.com/yuyuvalerie), [Zhantao Deng](https://github.com/GentleDell) 
 
 **Report**: [How to Invest in Movies]()
 
@@ -56,12 +56,14 @@ The dataset contains 4803 movies data with 20 distinct features. The important f
 - `Lib_vis.py`: Contain all kinds of visualization functions. 
 
 ### Working modules:
+- `Lib_actor_network.ipynb`: Explore actor data. Construct actor social network and visualized it via networkx package.
 - `Project_IMDb.py`: Python interface. A pipeline to run whole codes of our project from data exploration, feature preprocessing to movie network construction and prediction.  
 - `Project_IMDb.jpynb`: Jupyter notebook interface to run our project.
 
 
+
 ## 5. Contributions of group members
-**Shengzhao Xia:**
+**Sheng ZhaoXia:**
 - Actor/ress social network analysis
 - Genre and keyword subgraphs
 - Reports
@@ -71,12 +73,12 @@ The dataset contains 4803 movies data with 20 distinct features. The important f
 - Actor/ress and director subgraphs
 - Reports
 
-**Yu-Ting Huang:**
+**Yuting Huang:**
 - Budget and popularity subgraphs
 - ROI (Return on Investment) signal
-- Gradient descent and reports
+- Gradient decent and report
 
 **Zhantao Deng:**
 - Ridge regression, LASSO and their gradient decent
 - Average vote and production companies subgraphs
-- Reports
+- Report
