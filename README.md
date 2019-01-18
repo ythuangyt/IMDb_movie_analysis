@@ -49,11 +49,11 @@ The dataset contains 4803 movies data with 20 distinct features. The important f
 
 ## 4. What we have done
 ### Auxiliary modules:
-- `Lib_gradientdecent.py`: Gradient decent algorithms of ridge regression and lasso regression.
-- `Lib_graph.py`: Functions of constructing all subgraphs.
-- `Lib_keywords.py`: Groupkeywords by word roots and synonym and train a word2vec model.
-- `Lib_prediction.py`: Functions to predict return of investment according movie network.
-- `Lib_vis.py`: All kinds of visualization functions. 
+- `Lib_gradientdecent.py`: Contain gradient decent algorithms of ridge regression and lasso regression.
+- `Lib_graph.py`: Contain functions of constructing all subgraphs.
+- `Lib_keywords.py`: Contain fuctions grouping keywords by word roots and synonym and training a word2vec model.
+- `Lib_prediction.py`: Contain functions to predict return of investment according movie network.
+- `Lib_vis.py`: Contain all kinds of visualization functions. 
 
 ### Working modules:
 - `Project_IMDb.py`: Python interface. A pipeline to run whole codes of our project from data exploration, feature preprocessing to movie network construction and prediction.  
