@@ -56,8 +56,10 @@ The dataset contains 4803 movies data with 20 distinct features. The important f
 - `Lib_vis.py`: Contain all kinds of visualization functions. 
 
 ### Working modules:
+- `Lib_actor_network.ipynb`: Explore actor data. Construct actor social network and visualized it via networkx package.
 - `Project_IMDb.py`: Python interface. A pipeline to run whole codes of our project from data exploration, feature preprocessing to movie network construction and prediction.  
 - `Project_IMDb.jpynb`: Jupyter notebook interface to run our project.
+
 
 
 ## 5. Contributions of group members
