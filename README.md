@@ -44,6 +44,9 @@ We use the dataset on [Kaggle](https://www.kaggle.com/tmdb/tmdb-movie-metadata).
 
 
 ## 4. What we have done
+### Auxiliary modules
+
+### Working Jupyter notebooks
 
 ## 5. Contributions of group members
 **Sheng ZhaoXia:**
