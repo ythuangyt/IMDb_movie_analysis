@@ -55,8 +55,9 @@ The dataset contains 4803 movies data with 20 distinct features. The important f
 - `Lib_prediction.py`: Functions to predict return of investment according movie network.
 - `Lib_vis.py`: All kinds of visualization functions. 
 
-### Working Jupyter notebooks:
-- : 
+### Working modules:
+- `Project_IMDb.py`: Python interface. A pipeline to run whole codes of our project from data exploration, feature preprocessing to movie network construction and prediction.  
+- `Project_IMDb.jpynb`: Jupyter notebook interface to run our project.
 
 
 ## 5. Contributions of group members
