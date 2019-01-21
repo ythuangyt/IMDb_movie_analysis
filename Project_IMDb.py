@@ -96,31 +96,11 @@ Pacific_Rim = { # revenue: 407602906
              'popularity':  56.523205, 
              'production_companies':['Legendary Pictures', 'Warner Bros.', 'Disney Double Dare You (DDY)', 'Indochina Productions'], 
              'vote_average':6.7
-        
         }
 
 # 2. predict ROI of the movie
+# k-nearest neigbor to do prediction -- different genres need different k: Action = 10, Romance = 5, 
 k_nn = 10
-Predict_ROI = ROI_prediction(La_La_Land, signal, Vk, features, k_nn, File_path)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Predict_ROI = ROI_prediction(La_La_Land, signal, Vk, features, k_nn, File_path, genre=Genre)
+print('The prediction on ROI of the given movie is:', Predict_ROI)
