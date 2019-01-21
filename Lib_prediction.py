@@ -286,7 +286,29 @@ def compute_weight_vector(sub_feature, value, path_to_file):
     return W_vec_3d
 
 
-def ROI_prediction(node, Vk, signal, features, k_nn, path_to_file):
+def check_input(path_to_file, genre):
+    # if genre is given, load the Vk if it has been generated
+    if genre is not None:
+        try:
+            Vk = np.load(path_to_file + '/Vk_list_' + genre + '.npy')
+            old_Vk = Vk[Vk.shape[0]-1 :]
+            print('[The Vk on the give path has been loaded!]')
+        except:
+            old_Vk = None
+            print('[The Vk does not exist in the give path! Try to use the input Vk!]')
+    # otherwise, directly use the given Vk
+    else:
+        old_Vk = None
+        print('[Only use the input Vk!]')
+    return old_Vk
+
+
+def ROI_prediction(node, signal, Vk, features, k_nn, path_to_file, genre = None):
+    
+    old_Vk = check_input(path_to_file, genre)
+    if old_Vk is not None:
+        Vk = old_Vk
+    
     feature_vec = [None] * len(features)
     # 1. filter features
     for key, value in node.items():
@@ -304,8 +326,8 @@ def ROI_prediction(node, Vk, signal, features, k_nn, path_to_file):
     feature_weight = compute_weight_vector( features, feature_vec, path_to_file)
             
     for k in range(len(Vk)):
-        weight = feature_weight[:,:,k] * Vk[k]
-    ROI_neighbor = (-weight).argsort()[:k_nn]
+        weight = feature_weight[:,:,k] * Vk[0,k]
+    ROI_neighbor = (-weight).argsort(axis = 0)[:k_nn]
     
-    return (sum(weight[ROI_neighbor])/k_nn)
+    return (sum(signal[ROI_neighbor])/k_nn)
     

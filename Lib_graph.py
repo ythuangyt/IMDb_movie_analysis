@@ -369,7 +369,18 @@ def company_graph(File_path, features):
     return W_comp
         
 
-def construct_ROIsignal(IMDb):
+def construct_ROIsignal(IMDb, path = None):
+    # if the path is given, try to load signal data 
+    if path is not None:
+        try:
+            signal = np.load(path + '/signal.npy')
+            print('[The signal on the give path has been loaded!]\n')
+            return signal
+        except:
+            print('[ ! Warning: The signal on the give path is not found, try to generate a signal!]\n')
+    else: 
+        print("Generating ROI(Return on Investment ) signal ... \n")
+        
     budget = IMDb.budget.astype(float)
     budget[budget <= 1000] = np.nan
     
@@ -382,6 +393,8 @@ def construct_ROIsignal(IMDb):
     ROI_signal[ROI_signal >= 50] = 0
     
     ROI_signal = ROI_signal.values
+    np.save(r'./data/signal', ROI_signal)
+    print('Signal has been saved to the default path: ./data/.. \n')
     return ROI_signal
 
 # In[] DATA PICKING
@@ -418,8 +431,7 @@ def construct_graphs( path_to_file, subgraph_features, genre = None ):
     features = IMDb[subgraph_features]
             
     # construct signal and release memories
-    print("Generating ROI(Return on Investment ) signal ...")
-    signal = construct_ROIsignal(IMDb)
+    signal = construct_ROIsignal(IMDb) # does not give a path --> always generate a new signal
     del movies, credit, IMDb
     
     # construct subgraphs

@@ -15,6 +15,7 @@ from Lib_vis import visual_list, visual_signalongraph
 # In[ PART 1. Generate subgraphs ]
 
 # 1.setting file path and choosing features
+Genre     = 'Romance'
 File_path = r'./data'
 features  = ['budget',
              'cast',
@@ -26,13 +27,13 @@ features  = ['budget',
              'vote_average']
 
 # 2.constructing subgraphs
-signal, W_3d = construct_graphs( File_path, features, genre = 'Romance')
+signal, W_3d = construct_graphs( File_path, features, genre = Genre)
 
 
 # In[ PART 2. Optimize weight vector V ] 
 
 # 1.initialize GD parameters
-maxiters        = 1
+maxiters        = 200
 step_Vk         = 0.2
 step_t          = 0.00000005
 Lambda          = 0.01     # L1 regularization lambda = 0.01
@@ -52,6 +53,8 @@ Vk              = 1/( len(features) - 1 ) * np.ones( len(features) - 1 )  # genr
 # 3.iteratively optimize Vk
 t_list, Vk_list, loss_list, final_weight = Optimize_GraphWeight( W_3d,      Vk,       signal, t,       gain,   maxiters,
                                                                  algo_grad, algo_reg, Lambda, step_Vk, step_t, adaptive_step)
+# 4.save weight vector list
+np.save(File_path + '/Vk_list_' + Genre, Vk_list)
 
 # In[ PART 3. Visualize the results ] 
 
@@ -74,7 +77,7 @@ visual_signalongraph(Weight, signal, labels = np.ones(Weight.shape[0]), save = T
 
 # 1. define a new node with its 
 # Please fill None when there is no data in a feature
-new_movie = { # La La Land, revenue: 446092357
+La_La_Land = { # La La Land, revenue: 446092357
              'budget':      30000000, 
              'cast':        ['Ryan Gosling', 'Emma Stone', 'Amiée Conn', 'Terry Walters', 'Thom Shelton'], 
              'crew':        'Damien Chazelle', 
@@ -84,9 +87,21 @@ new_movie = { # La La Land, revenue: 446092357
              'production_companies':['Summit Entertainment', 'Black Label Media', 'TIK Films', 'Impostor Pictures', 'Gilbert Films', 'Marc Platt Productions'], 
              'vote_average':8.0}
 
+Pacific_Rim = { # revenue: 407602906
+            'budget':      180000000, 
+             'cast':        ['Stacker Pentecost', 'Raleigh Becket'], 
+             'crew':        'Guillermo del Toro', 
+             'genres':      None, 
+             'keywords':    ['dystopia', 'giant robot', 'giant monster', 'apocalypse', 'imax'], 
+             'popularity':  56.523205, 
+             'production_companies':['Legendary Pictures', 'Warner Bros.', 'Disney Double Dare You (DDY)', 'Indochina Productions'], 
+             'vote_average':6.7
+        
+        }
+
 # 2. predict ROI of the movie
-k_nn = 3
-Predict_ROI = ROI_prediction(new_movie, Vk, signal, features, k_nn, File_path)
+k_nn = 10
+Predict_ROI = ROI_prediction(La_La_Land, signal, Vk, features, k_nn, File_path)
 
 
 
