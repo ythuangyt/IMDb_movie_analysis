@@ -15,7 +15,7 @@ from Lib_vis import visual_list, visual_signalongraph
 # In[ PART 1. Generate subgraphs ]
 
 # 1.setting file path and choosing features
-Genre     = 'Romance'
+Genre     = 'Science Fiction'
 File_path = r'./data'
 features  = ['budget',
              'cast',
@@ -87,19 +87,29 @@ La_La_Land = { # La La Land, revenue: 446092357
              'production_companies':['Summit Entertainment', 'Black Label Media', 'TIK Films', 'Impostor Pictures', 'Gilbert Films', 'Marc Platt Productions'], 
              'vote_average':8.0}
 
-Pacific_Rim = { # revenue: 407602906
-            'budget':      180000000, 
-             'cast':        ['Stacker Pentecost', 'Raleigh Becket'], 
-             'crew':        'Guillermo del Toro', 
+Pacific_Rim2 = { # revenue: 290061297
+            'budget':      150000000 , 
+             'cast':        ['Jake Pentecost', 'Nate Lambert', 'Amara Namani', 'Hermann Gottlieb'], 
+             'crew':        'Steven S. DeKnight', 
              'genres':      None, 
-             'keywords':    ['dystopia', 'giant robot', 'giant monster', 'apocalypse', 'imax'], 
-             'popularity':  56.523205, 
-             'production_companies':['Legendary Pictures', 'Warner Bros.', 'Disney Double Dare You (DDY)', 'Indochina Productions'], 
-             'vote_average':6.7
-        }
+             'keywords':    ['sea doo', 'woman with masculine short hair', 'woman with masculine hair', 'chinawoman', 'teen girl with too much make up'], 
+             'popularity':  30 , 
+             'production_companies':['Clear Angle Studios', 'Dentsu', 'Double Dare You (DDY)', 'Double Negative (DNEG)', 'Fuji Television Network ', 'Legendary Entertainment'], 
+             'vote_average':5.6  }
+
+Interstellar = { # revenue: 675120017
+             'budget':      165000000 , 
+             'cast':        ['Matthew McConaughey', 'Ellen Burstyn', 'Mackenzie Foy', 'John Lithgow'], 
+             'crew':        'Christopher Nolan', 
+             'genres':      'Science Fiction', 
+             'keywords':    ['saving the world', 'artificial intelligence', 'father son relationship', 'single parent', 'nasa'], 
+             'popularity':  724.247784 , 
+             'production_companies':['Paramount Pictures', 'Legendary Pictures', 'Warner Bros.', 'Syncopy', 'Lynda Obst Productions'], 
+             'vote_average':8.1  }
 
 # 2. predict ROI of the movie
-# k-nearest neigbor to do prediction -- different genres need different k: Action = 10, Romance = 5, 
+# k-nearest neigbor to do prediction, different genres need different k (a hyperparameter) 
+#   Action = 10, Romance = 5, Science fiction = 3
 k_nn = 10
 
 Predict_ROI = ROI_prediction(La_La_Land, signal, Vk, features, k_nn, File_path, genre=Genre)

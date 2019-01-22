@@ -7,7 +7,7 @@ Created on Thu Jan 17 14:09:47 2019
 import re
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
-from Lib_graph import load_tmdb_movies, load_tmdb_credits
+from Lib_graph import load_tmdb_movies, load_tmdb_credits, build_genre_indices
 
 def get_bag_of_word_pred(doc_list):
     docs = []
@@ -228,7 +228,7 @@ def popularity_vector(value, features):
 
 
 # Genrating weight vectors
-def compute_weight_vector(sub_feature, value, path_to_file):
+def compute_weight_vector(sub_feature, value, genre, path_to_file):
     # files to read
     movies_name = '/tmdb_5000_movies.csv'
     credits_name = '/tmdb_5000_credits.csv'
@@ -283,7 +283,11 @@ def compute_weight_vector(sub_feature, value, path_to_file):
     W_vec_3d = np.dstack([W_vec_3d, W_vec_act]) if W_vec_3d.size else W_vec_act
     W_vec_3d = np.dstack([W_vec_3d, W_vec_dir]) if W_vec_3d.size else W_vec_dir
     W_vec_3d = np.dstack([W_vec_3d, W_vec_key]) if W_vec_3d.size else W_vec_key
-    return W_vec_3d
+    
+    # delete movies belonging to other genres
+    indices = build_genre_indices(genre, features)
+    
+    return W_vec_3d[indices, :, :]
 
 
 def check_input(path_to_file, genre):
@@ -307,10 +311,10 @@ def ROI_prediction(node, signal, Vk, features, k_nn, path_to_file, genre = None)
     
     old_Vk = check_input(path_to_file, genre)
     if old_Vk is not None:
-        Vk = old_Vk
+        Vk = old_Vk.flatten()
     
     feature_vec = [None] * len(features)
-    # 1. filter features
+    # 1.filt features
     for key, value in node.items():
         if value is None:
             continue
@@ -322,11 +326,11 @@ def ROI_prediction(node, signal, Vk, features, k_nn, path_to_file, genre = None)
             # otherwise continue
             except:
                 continue
-    # 2. compute subgraphs vectors
-    feature_weight = compute_weight_vector( features, feature_vec, path_to_file)
-            
+    # 2.compute subgraphs vectors
+    feature_weight = compute_weight_vector( features, feature_vec, genre, path_to_file)
+    
     for k in range(len(Vk)):
-        weight = feature_weight[:,:,k] * Vk[0,k]
+        weight = feature_weight[:,:,k] * Vk[k]
     ROI_neighbor = (-weight).argsort(axis = 0)[:k_nn]
     
     return (sum(signal[ROI_neighbor])/k_nn)
