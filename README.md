@@ -49,18 +49,17 @@ The dataset contains 4803 movies data with 20 distinct features. The important f
 
 ## 4. What we have done
 ### Auxiliary modules:
-- `Lib_gradientdecent.py`: Contain gradient decent algorithms of ridge regression and lasso regression.
-- `Lib_graph.py`: Contain functions of constructing all subgraphs.
-- `Lib_keywords.py`: Contain fuctions grouping keywords by word roots and synonym and training a word2vec model.
-- `Lib_prediction.py`: Contain functions to predict return of investment according movie network.
-- `Lib_vis.py`: Contain all kinds of visualization functions. 
+- `Lib_gradientdecent.py`: contains gradient decent algorithms of ridge regression and lasso regression.
+- `Lib_graph.py`: contains functions of constructing all subgraphs.
+- `Lib_keywords.py`: contains fuctions grouping keywords by word roots and synonym and training a word2vec model.
+- `Lib_prediction.py`: contains functions to predict return of investment according movie network.
+- `Lib_vis.py`: contains all kinds of visualization functions. 
 
 ### Working modules:
-- `Lib_actor_network.ipynb`: Explore actor data. Construct actor social network and visualized it via networkx package.
-- `Project_IMDb.py`: Python interface. A pipeline to run whole codes of our project from data exploration, feature preprocessing to movie network construction and prediction.  
-- `Project_IMDb.jpynb`: Jupyter notebook interface to run our project.
-
-
+- `Lib_actor_network.ipynb`: explores actor data. Construct actor social network and visualized it via networkx package.
+- `Project_IMDb.py`: a Python interface. A pipeline to run whole codes of our project from data exploration, feature preprocessing to subgraphs construction, ML model training and prediction. 
+- `Project_IMDb.jpynb`: a Jupyter notebook interface to run our project. It shares almost the same codes with `Project_IMDb.py`.
+- `Testing.py`: a Python interface for those who want to predict ROI of a new moive using pre-trained model. 
 
 ## 5. Contributions of group members
 **Sheng ZhaoXia:**
