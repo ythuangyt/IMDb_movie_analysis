@@ -3,8 +3,14 @@
 
 **Report**: [How to Invest in Movies](https://github.com/GentleDell/IMDb_movie_analysis/blob/master/IMDB_Project.pdf)
 
-## Abstract
+## Table of Contents
+- [Abstract](#abstract) 
+- [Research Questions](#research-questions) 
+- [Datasets](#Datasets)
+- [What we have done](#what-we-have-done)
+- [Contributions](#contributions)
 
+## Abstract
 
 ## 1. Prerequisites
 This project is based on [Python](https://www.python.org/) and we use [Spyder](https://www.spyder-ide.org/) as our python programming environment. We also provide `.ipynb` files for [Jupyter notebook](https://jupyter.org/). These softwares can be installed together with [Anaconda](https://www.anaconda.com/). In addition, We install all packages through the Anaconda Prompt. These packages have been tested in **Window 10 Home** and **macOS Mojave**, but it should be easy to implement in other platforms. 
