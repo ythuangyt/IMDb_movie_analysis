@@ -1,5 +1,5 @@
 # How to Invest in Movies
-**Authors:** [Sheng ZhaoXia](https://github.com/SXiaZr), [Yinan Zhang](https://github.com/yinanzhangepfl), [Yu-Ting Huang](https://github.com/yuyuvalerie), [Zhantao Deng](https://github.com/GentleDell) 
+**Authors:** [Sheng ZhaoXia](https://github.com/SXiaZr), [Yinan Zhang](https://github.com/yinanzhangepfl), [Yu-Ting Huang](https://github.com/ythuangyt), [Zhantao Deng](https://github.com/GentleDell) 
 
 **Report**: [How to Invest in Movies](https://github.com/GentleDell/IMDb_movie_analysis/blob/master/IMDB_Project.pdf)
 
@@ -72,12 +72,12 @@ The dataset contains 4803 movies data with 20 distinct features. The important f
 - Actor/ress and director subgraphs
 - Reports
 
-**Yuting Huang:**
+**Yu-Ting Huang:**
 - Budget and popularity subgraphs
 - ROI (Return on Investment) signal
-- Gradient decent and report
+- Gradient descent and reports
 
 **Zhantao Deng:**
 - Ridge regression, LASSO and their gradient decent
 - Average vote and production companies subgraphs
-- Report
+- Reports
